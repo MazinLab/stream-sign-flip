@@ -1,7 +1,7 @@
 # stream-sign-flip
 A simple Vitis HLS core to negate the Q values from a DDS to produce a waveform for downconversion.
 
-The DDS waveform is generated from the Xilinx FIR core. The FIR core data output format is shown in the "Implementation Details" tab in the FIR compiler core GUI. The FIR outputs 256 samples per clock which constitute 8, 16-bit IQ samples. This core splices out the 8 Q samples, negates them according to twos complement rules, and spliced them back in. This forms a mirror waveform to the upconversion stream which can be used for downconversion.
+The DDS waveform is generated from the Xilinx FIR core. The FIR core data output format is shown in the "Implementation Details" tab in the FIR compiler core GUI. The FIR outputs 256 samples per clock which constitute 8, 32-bit IQ samples. This core splices out the 8, 16-bit Q samples, negates them according to twos complement rules, and spliced them back in. This forms a mirror waveform to the upconversion stream which can be used for downconversion.
 
 See testbench output for details:
 ```
